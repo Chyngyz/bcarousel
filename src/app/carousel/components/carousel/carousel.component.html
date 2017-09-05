@@ -1,0 +1,31 @@
+<div class="b-carousel-wrap"
+     [style.width]="width"
+     [style.height]="height"
+     [ngStyle]="style"
+     [ngClass]="styleClass">
+  <b-carousel-item
+    [images]="images"
+    [animation]="animation"
+    [active]="activeIndex"
+    [transitionDuration]="transitionDuration"
+    [transitionDelay]="transitionDelay"
+    [itemStyle]="itemStyle"
+    [itemStyleClass]="itemStyleClass"
+    [size]="bgSize"></b-carousel-item>
+</div>
+
+<b-carousel-nav
+  *ngIf="showNav"
+  (onNext)="next()"
+  (onPrev)="prev()"
+  [navStyle]="navStyle"
+  [navStyleClass]="navStyleClass"
+  [showNavOnHover]="showNavOnHover"></b-carousel-nav>
+
+<b-carousel-dots
+  *ngIf="showDots"
+  [dotsStyle]="dotsStyle"
+  [dotsStyleClass]="dotsStyleClass"
+  [images]="images"
+  [active]="activeIndex"
+  (onClick)="activate($event)"></b-carousel-dots>

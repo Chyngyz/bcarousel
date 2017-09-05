@@ -1,0 +1,11 @@
+:host {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  .b-carousel-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}

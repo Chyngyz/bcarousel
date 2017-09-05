@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <h2>Responsive carousel component</h2>
+  <h3>BCarousel in container</h3>
+  <b-carousel
+    [images]="carouselData.images"
+    [(activeIndex)]="carouselData.activeIndex"
+    [height]="'500px'"
+    [width]="'100%'"
+    [bgSize]="'cover'"
+    [autoPlay]="false"
+    [autoplayTimeout]="5000"
+    [itemStyleClass]="'one'"
+    [transitionDuration]=".5"></b-carousel>
+</div>
+
+<h3 class="text-center">BCarousel fullwidth</h3>
+<b-carousel
+  [images]="carouselData2.images"
+  [(activeIndex)]="carouselData2.activeIndex"
+  [showNavOnHover]="false"
+  [width]="'100%'"></b-carousel>

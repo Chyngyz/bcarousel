@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .b-carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    &--fade {
+      display: block;
+      .b-carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+        transition-delay: initial;
+
+        &--active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--cover {
+      .b-carousel-item {
+        background-size: cover;
+      }
+    }
+
+    &--contain {
+      .b-carousel-item {
+        background-size: contain;
+      }
+    }
+  }
+}

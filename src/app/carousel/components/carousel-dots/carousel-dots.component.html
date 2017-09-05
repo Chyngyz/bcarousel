@@ -1,0 +1,6 @@
+<ul class="b-carousel-dots" [ngClass]="dotsStyleClass" [ngStyle]="dotsStyle">
+  <li class="b-carousel-dot"
+      *ngFor="let item of images; let i = index;"
+      [ngClass]="{'active': i === active}"
+      (click)="onClick.emit(i)"><span></span></li>
+</ul>
