@@ -4,6 +4,24 @@
   height: 100%;
   width: 100%;
 
+  .b-carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-delay: initial;
+
+    &--active {
+      display: block;
+    }
+  }
+
   .b-carousel {
     position: relative;
     height: 100%;
@@ -11,8 +29,8 @@
     overflow: hidden;
 
     &--fade {
-      display: block;
       .b-carousel-item {
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
@@ -27,6 +45,80 @@
 
         &--active {
           opacity: 1;
+        }
+      }
+    }
+
+    &--zoom {
+      .b-carousel-item {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition-property: all;
+        opacity: 0;
+        transition-timing-function: ease-in-out;
+        transition-delay: initial;
+        transform: scale(1.8);
+
+        &--active {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    &--rotate {
+      .b-carousel-item {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition-property: all;
+        opacity: 0;
+        transition-timing-function: ease-in-out;
+        transition-delay: initial;
+        transform: scale(5) rotate(-90deg);
+
+        &--active {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+    }
+
+    &--slide {
+      .b-carousel-item {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition-property: left;
+        transition-timing-function: ease-in-out;
+        transition-delay: initial;
+
+        &--active {
+          left: 0;
+        }
+
+        &--left-slide {
+          left: -100%;
+        }
+
+        &--right-slide {
+          left: 100%;
         }
       }
     }

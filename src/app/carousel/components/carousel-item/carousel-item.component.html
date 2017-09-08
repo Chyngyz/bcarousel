@@ -2,6 +2,8 @@
   <div class="b-carousel-item"
        *ngFor="let imageUrl of images; let i = index"
        [class.b-carousel-item--active]="i === active"
+       [class.b-carousel-item--left-slide]="i < active"
+       [class.b-carousel-item--right-slide]="i > active"
        [style.transitionDuration]="transitionDuration ? transitionDuration + 's' : ''"
        [style.transitionDelay]="transitionDelay ? transitionDelay + 's' : 'initial'"
        [style.backgroundImage]="'url(' + imageUrl + ')'"
