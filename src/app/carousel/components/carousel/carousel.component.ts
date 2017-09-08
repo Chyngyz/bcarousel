@@ -22,7 +22,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   @Input() showNav = true;
   @Input() showNavOnHover = true;
   @Input() showDots = true;
-  @Input() transitionDuration = 1;
+  @Input() transitionDuration = 800;
   @Input() transitionDelay: number;
   @Input() autoPlay = false;
   @Input() autoplayTimeout = 3000;
@@ -32,6 +32,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   @Input() itemStyleClass: any;
   @Input() navStyle: any;
   @Input() navStyleClass: any;
+  @Input() loop = false;
   @Output() activeIndexChange = new EventEmitter();
 
   private interval: any;
@@ -50,12 +51,20 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   next() {
-    this.activeIndex = (this.activeIndex === (this.images.length - 1) ? 0 : (this.activeIndex + 1));
+    if (this.loop) {
+      this.activeIndex = (this.activeIndex === (this.images.length - 1) ? 0 : (this.activeIndex + 1));
+    } else {
+      this.activeIndex = (this.activeIndex === (this.images.length - 1) ? this.activeIndex : (this.activeIndex + 1));
+    }
     this.activeIndexChange.emit(this.activeIndex);
   }
 
   prev() {
-    this.activeIndex = this.activeIndex === 0 ? (this.images.length - 1) : (this.activeIndex - 1);
+    if (this.loop) {
+      this.activeIndex = (this.activeIndex === 0 ? (this.images.length - 1) : (this.activeIndex - 1));
+    } else {
+      this.activeIndex = (this.activeIndex === 0 ? this.activeIndex : (this.activeIndex - 1));
+    }
     this.activeIndexChange.emit(this.activeIndex);
   }
 

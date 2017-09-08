@@ -17,7 +17,7 @@
     transition-timing-function: ease-in-out;
     transition-delay: initial;
 
-    &--active {
+    &.active {
       display: block;
     }
   }
@@ -43,7 +43,7 @@
         transition-timing-function: ease-in-out;
         transition-delay: initial;
 
-        &--active {
+        &.active {
           opacity: 1;
         }
       }
@@ -65,7 +65,7 @@
         transition-delay: initial;
         transform: scale(1.8);
 
-        &--active {
+        &.active {
           opacity: 1;
           transform: scale(1);
         }
@@ -88,7 +88,7 @@
         transition-delay: initial;
         transform: scale(5) rotate(-90deg);
 
-        &--active {
+        &.active {
           opacity: 1;
           transform: scale(1) rotate(0deg);
         }
@@ -109,7 +109,7 @@
         transition-timing-function: ease-in-out;
         transition-delay: initial;
 
-        &--active {
+        &.active {
           left: 0;
         }
 

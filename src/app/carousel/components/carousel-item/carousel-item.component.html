@@ -1,11 +1,11 @@
 <div class="b-carousel b-carousel--{{ animation }} b-carousel--{{ size }}">
   <div class="b-carousel-item"
        *ngFor="let imageUrl of images; let i = index"
-       [class.b-carousel-item--active]="i === active"
+       [class.active]="i === active"
        [class.b-carousel-item--left-slide]="i < active"
        [class.b-carousel-item--right-slide]="i > active"
-       [style.transitionDuration]="transitionDuration ? transitionDuration + 's' : ''"
-       [style.transitionDelay]="transitionDelay ? transitionDelay + 's' : 'initial'"
+       [style.transitionDuration]="transitionDuration ? transitionDuration + 'ms' : ''"
+       [style.transitionDelay]="transitionDelay ? transitionDelay + 'ms' : 'initial'"
        [style.backgroundImage]="'url(' + imageUrl + ')'"
        [ngClass]="itemStyleClass"
        [ngStyle]="itemStyle"></div>

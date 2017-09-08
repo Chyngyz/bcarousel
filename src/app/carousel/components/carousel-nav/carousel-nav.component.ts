@@ -13,6 +13,9 @@ export class CarouselNavComponent {
   @Input() showNavOnHover: boolean;
   @Input() navStyle: any;
   @Input() navStyleClass: any;
+  @Input() images: string[];
+  @Input() active: number;
+  @Input() loop: boolean;
   @Output() onPrev = new EventEmitter();
   @Output() onNext = new EventEmitter();
   @HostBinding('class.active') slideInOut: boolean;

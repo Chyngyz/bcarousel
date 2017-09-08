@@ -1,22 +1,43 @@
 <div class="container text-center">
   <h2>Responsive carousel component</h2>
-  <h3>BCarousel in container</h3>
+  <h3>Basic carousel</h3>
   <b-carousel
     [images]="carouselData.images"
-    [(activeIndex)]="carouselData.activeIndex"
+    [(activeIndex)]="carouselData.activeIndex"></b-carousel>
+
+  <br>
+
+  <h3>Carousel with custom height and width</h3>
+  <b-carousel
+    [images]="carouselData2.images"
+    [(activeIndex)]="carouselData2.activeIndex"
     [height]="'500px'"
-    [width]="'100%'"
-    [bgSize]="'cover'"
-    [autoPlay]="false"
+    [width]="'100%'"></b-carousel>
+
+  <h3>Carousel with custom timing and slide transition</h3>
+  <b-carousel
+    [images]="carouselData3.images"
+    [(activeIndex)]="carouselData3.activeIndex"
     [animation]="'slide'"
-    [autoplayTimeout]="5000"
-    [itemStyleClass]="'one'"
-    [transitionDuration]=".5"></b-carousel>
+    [transitionDuration]="300"
+    [height]="'500px'"
+    [width]="'100%'"></b-carousel>
+
+  <h3>Carousel with loop enabled and rotate transition</h3>
+  <b-carousel
+    [images]="carouselData4.images"
+    [(activeIndex)]="carouselData4.activeIndex"
+    [animation]="'rotate'"
+    [loop]="true"
+    [height]="'500px'"
+    [width]="'100%'"></b-carousel>
 </div>
 
-<h3 class="text-center">BCarousel fullwidth</h3>
+
+<h3 class="text-center">Fullwidth carousel with zoom transition</h3>
 <b-carousel
-  [images]="carouselData2.images"
-  [(activeIndex)]="carouselData2.activeIndex"
+  [images]="carouselData5.images"
+  [(activeIndex)]="carouselData5.activeIndex"
   [showNavOnHover]="false"
+  [animation]="'zoom'"
   [width]="'100%'"></b-carousel>
